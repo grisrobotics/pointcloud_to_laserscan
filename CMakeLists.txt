@@ -14,6 +14,9 @@ find_package(sensor_msgs REQUIRED)
 add_executable(pointcloud_to_laserscan src/pointcloud_to_laserscan.cpp)
 ament_target_dependencies(pointcloud_to_laserscan rclcpp std_msgs sensor_msgs)
 
+install(TARGETS
+  pointcloud_to_laserscan
+  DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
